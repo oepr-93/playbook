@@ -1,0 +1,49 @@
+const repo = {
+    name: "LaunchX",
+    author: "oepr",
+    language: "JavaScript",
+    numberOfCommits: 900,
+    stars: 550,
+    forks: 100,
+    issues_open: 12,
+    issues_close: 11,
+    getTotalIssues: function(){
+      return this.issues_open + this.issues_close
+    },
+    getGeneralInfo: function(){
+      return `This repository ${this.name} was created by ${this.author}`
+    }
+   }
+   
+    const issue = {
+      title: "",
+      repositoryNameAssociated: "",
+      status: "",
+      numberOfComments: "",
+      labels: "",
+      author: "",
+      dateCreated: "",
+      lastUpdated: "",
+      getTitleAndAuthor: function () {
+        return this.title + this.author;
+      },
+      getGeneralInfo: function () {
+        return `Issue ${this.title} \n Repository: ${this.repositoryNameAssociated} \n Author: ${this.author} \n status ${this.status} \n Created ${this.dateCreated}, \n Updated ${this.lastUpdated}`
+      }
+    }
+    const pullRequest = {
+      title: "",
+      branchName: "",
+      dateCreated: "",
+      status: "",
+      repositoryNameAssociated: "",
+      getStatus: function () {
+        return this.status;
+      },
+      getTitleAndAutor: function () {
+        return this.title + this.status;
+      }
+    }
+   console.log("Nombre del repo:" + repo.name)
+   console.log("Issues totales: " + repo.getTotalIssues())
+   console.log(repo.getGeneralInfo())
